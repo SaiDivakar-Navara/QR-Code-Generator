@@ -31,7 +31,6 @@ A simple **QR Code Generator** built with **HTML, CSS, JavaScript (Frontend)** a
 ### **1️⃣ Clone the Repository**
 ```sh
 git clone https://github.com/SaiDivakar-Navara/QR-Code-Generator.git
-cd qrcode-generator
 ```
 
 ### **2️⃣ Set Up Python Virtual Environment**
