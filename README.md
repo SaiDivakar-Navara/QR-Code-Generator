@@ -74,6 +74,10 @@ Then open **http://127.0.0.1:5500** in your browser.
 
 ---
 
+## Demo
+![Demo Image]([image_path](https://raw.githubusercontent.com/SaiDivakar-Navara/QR-Code-Generator/refs/heads/main/QR%20Code%20Generator/Frontend/Screenshot%202025-03-31%20161631.png))
+
+
 ## 📂 Project Structure
 ```
 📁 qr-code-generator
