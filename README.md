@@ -75,7 +75,7 @@ Then open **http://127.0.0.1:5500** in your browser.
 ---
 
 ## Demo
-![QR Code]([https://raw.githubusercontent.com/username/repository/main/images/qrcode.png](https://raw.githubusercontent.com/SaiDivakar-Navara/QR-Code-Generator/refs/heads/main/QR%20Code%20Generator/Frontend/Screenshot%202025-03-31%20161631.png))
+![imag alt](https://github.com/SaiDivakar-Navara/QR-Code-Generator/blob/1ded708c32d2fc6351d4b702d02bdab684ae3291/QR%20Code%20Generator/Frontend/Screenshot%202025-03-31%20161631.png)
 
 
 
