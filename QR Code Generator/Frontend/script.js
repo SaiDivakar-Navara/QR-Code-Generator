@@ -8,16 +8,16 @@ document.getElementById("generateBtn").addEventListener("click", function () {
     let qrImage = document.getElementById("qrImage");
     let downloadBtn = document.getElementById("downloadBtn");
 
-    fetch(`http://127.0.0.1:8000/generate_qr/?data=${encodeURIComponent(text)}`)
-        .then(response => response.blob())  // Convert response to image blob
+    // ✅ Relative API call (works locally & on EC2)
+    fetch(`/generate_qr?data=${encodeURIComponent(text)}`)
+        .then(response => response.blob())
         .then(blob => {
-            let imageUrl = URL.createObjectURL(blob);  // Create object URL for the image
+            let imageUrl = URL.createObjectURL(blob);
             qrImage.src = imageUrl;
-            qrImage.style.display = "block";  // Show the image
-            
-            // Enable the download button
+            qrImage.style.display = "block";
+
             downloadBtn.href = imageUrl;
-            downloadBtn.style.display = "inline-block";  // Show the button
+            downloadBtn.style.display = "inline-block";
         })
         .catch(error => console.error("Error:", error));
 });
