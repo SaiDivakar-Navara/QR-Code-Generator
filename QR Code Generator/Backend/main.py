@@ -1,30 +1,34 @@
 from fastapi import FastAPI, Query
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 import qrcode
 from io import BytesIO
 
 app = FastAPI()
 
-# Enable CORS so the frontend can access the backend
+# CORS (optional but fine)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins (change this to restrict access)
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-@app.get("/generate_qr/")
-async def generate_qr(data: str = Query(..., min_length=1)):
-    """Generate a QR Code and return it as an image."""
-    # Generate QR Code
-    qr = qrcode.make(data)
+# Serve frontend static files
+app.mount("/static", StaticFiles(directory="Frontend"), name="static")
 
-    # Save QR code to an in-memory buffer
+# Serve index.html
+@app.get("/")
+def serve_frontend():
+    return FileResponse("Frontend/index.html")
+
+# QR generation API
+@app.get("/generate_qr")
+async def generate_qr(data: str = Query(..., min_length=1)):
+    qr = qrcode.make(data)
     img_io = BytesIO()
     qr.save(img_io, format="PNG")
-    img_io.seek(0)  # Move cursor to the beginning
-
-    # Return the image as a response
+    img_io.seek(0)
     return StreamingResponse(img_io, media_type="image/png")
