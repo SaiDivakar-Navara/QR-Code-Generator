@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <h1>QR Code Generator</h1>
         <input type="text" id="qrText" placeholder="Enter text for QR Code">
         <button id="generateBtn">Generate QR Code</button>
+
         <div id="qrResult">
             <img id="qrImage" src="" alt="Your QR Code will appear here">
             <a id="downloadBtn" style="display: none;" download="qrcode.png">
@@ -18,6 +19,7 @@
             </a>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
