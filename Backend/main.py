@@ -24,7 +24,7 @@ app.mount("/static", StaticFiles(directory="Frontend"), name="static")
 def serve_frontend():
     return FileResponse("Frontend/index.html")
 
-# QR generation API
+# QR generation-API
 @app.get("/generate_qr")
 async def generate_qr(data: str = Query(..., min_length=1)):
     qr = qrcode.make(data)
