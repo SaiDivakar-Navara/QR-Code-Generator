@@ -1,81 +1,46 @@
-# QR Code Generator 🚀
+# 🚀 QR Code Generator – CI/CD Enabled DevOps Project
 
-A simple **QR Code Generator** built with **HTML, CSS, JavaScript (Frontend)** and **FastAPI (Backend in Python)**. This application allows users to generate QR codes from the frontend and display the generated image dynamically.
+A **full-stack QR Code Generator web application** built using **HTML, CSS, JavaScript (Frontend)** and **FastAPI (Backend)**, fully **containerized with Docker** and **automatically deployed on AWS EC2 using Jenkins CI/CD pipeline**.
+
+This project demonstrates **real-world DevOps practices** including containerization, cloud deployment, and continuous integration & delivery.
+
+---
 
 ## 📌 Features
 ✅ Generate QR codes instantly  
-✅ Download the generated QR code  
-✅ Modern & Responsive UI  
-✅ Fast and lightweight backend using FastAPI  
-✅ CORS-enabled API for smooth frontend-backend communication  
+✅ Download generated QR codes  
+✅ Responsive and user-friendly UI  
+✅ FastAPI-powered backend  
+✅ Dockerized application  
+✅ Automated CI/CD using Jenkins  
+✅ Deployed on AWS EC2  
+✅ Auto redeploy on every GitHub push  
 
 ---
 
 ## 🛠️ Technologies Used
-### **Frontend:**
+
+### **Frontend**
 - HTML5  
-- CSS3 (Responsive Design)  
-- JavaScript (Fetch API for backend communication)  
+- CSS3  
+- JavaScript  
 
-### **Backend:**
+### **Backend**
 - Python  
-- FastAPI (for API handling)  
-- qrcode library (for generating QR codes)  
-- Uvicorn (to run FastAPI server)  
-- CORS Middleware (for frontend-backend integration)  
+- FastAPI  
+- Uvicorn  
+- qrcode (Pillow)  
+- CORS Middleware  
+
+### **DevOps & Cloud**
+- Docker  
+- Jenkins (CI/CD Pipeline)  
+- GitHub  
+- AWS EC2 (Ubuntu)  
 
 ---
 
-## ⚙️ Setup Instructions
-
-### **1️⃣ Clone the Repository**
-```sh
-git clone https://github.com/SaiDivakar-Navara/QR-Code-Generator.git
-```
-
-### **2️⃣ Set Up Python Virtual Environment**
-```sh
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate     # On Windows
-```
-
-### **3️⃣ Install Dependencies**
-```sh
-pip install -r backend/requirements.txt
-```
-
-### **4️⃣ Run the FastAPI Server**
-```sh
-uvicorn main:app --reload
-```
-This starts the backend at:  
-➡ **http://127.0.0.1:8000**
-
----
-
-## 🖥️ Running the Frontend
-### **1️⃣ Open `index.html`**
-Simply open the `index.html` file in your browser.
-
-### **OR** Start a Local HTTP Server
-```sh
-# Python 3.x
-python -m http.server 5500
-```
-Then open **http://127.0.0.1:5500** in your browser.
-
----
-
-## 🚀 Usage
-1️⃣ Enter text in the input box.  
-2️⃣ Click **"Generate QR Code"** to get the QR image.  
-3️⃣ Click **"Download QR Code"** to save the image.  
-
----
-
-## Demo
-![imag alt](https://github.com/SaiDivakar-Navara/QR-Code-Generator/blob/1ded708c32d2fc6351d4b702d02bdab684ae3291/QR%20Code%20Generator/Frontend/Screenshot%202025-03-31%20161631.png)
+## 🧩 Project Architecture (High Level)
 
 
 
@@ -88,31 +53,50 @@ Then open **http://127.0.0.1:5500** in your browser.
 │   ├── script.js         # JavaScript (Handles API requests)
 │── 📂 backend
 │   ├── main.py             # FastAPI Backend
-│   ├── requirements.txt    # Python dependencies      
+│   ├── requirements.txt    # Python dependencies  
+│── Dockerfile               # Docker Configuration     
 │── README.md               # Project Documentation     
 ```
 
----
-
-## 🔗 API Endpoints
-### **1️⃣ Generate QR Code**
-```
-GET /generate_qr/?data=YourTextHere
-```
-**Response:** Returns the QR code image.
 
 ---
 
-## 📜 License
-This project is **open-source** under the **MIT License**.
+### ☁️ Deployment on AWS EC2
+- Deployment Steps
+- Created Ubuntu EC2 instance
+- Installed Docker and Jenkins
+- Opened port 8000 in Security Group
+- Deployed application using Docker container
+- Jenkins handles automated redeployment
+  
+    Live URL:
 
----
+        http://<EC2-PUBLIC-IP>:8000/
 
-## 🎯 Author
-👨‍💻 Developed by **[Sai Divakar Navara]**  
-📧 Contact: saidivakar.navara@gmail.com 
-🔗 GitHub: [Your GitHub Profile](https://github.com/SaiDivakar-Navara)
 
----
+### 🔄 CI/CD Pipeline Using Jenkins
+- CI/CD Workflow
+- Developer pushes code to GitHub
+- Jenkins pulls the latest code
+- Docker image is built
+- Old container is stopped
+- New container is deployed automatically
+- Jenkins Pipeline Stages
+- Clone Repository
+- Build Docker Image
+- Deploy Docker Container
 
-🎉 **Now, you’re all set to generate and download QR codes with ease!** 🚀
+
+###  📜 License
+
+    This project is licensed under the MIT License.
+
+### 👨‍💻 Author
+
+    Sai Divakar Navara  
+    📧 Email: saidivakar.navara@gmail.com
+
+🔗 GitHub: https://github.com/SaiDivakar-Navara
+
+
+### Thank You!!!
