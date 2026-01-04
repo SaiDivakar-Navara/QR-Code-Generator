@@ -42,6 +42,7 @@ This project demonstrates **real-world DevOps practices** including containeriza
 
 ## 🧩 Project Architecture (High Level)
 
+![Home Page](https://github.com/SaiDivakar-Navara/QR-Code-Generator/blob/main/Frontend/image.png)
 
 
 ## 📂 Project Structure
