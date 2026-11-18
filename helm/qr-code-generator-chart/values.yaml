@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: saidivakar/qr-code-generator
+  tag: v1
+  pullPolicy: IfNotPresent
+
+ingress:
+  enabled: false
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: qr-code-generator.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
