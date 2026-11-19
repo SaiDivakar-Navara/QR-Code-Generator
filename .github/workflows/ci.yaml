@@ -114,6 +114,8 @@ jobs:
   update-newtag-in-helm-chart:
     name: Update Helm Chart with New Docker Tag
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs:
       - docker-build-and-push
     steps:
@@ -132,5 +134,5 @@ jobs:
           git config --global user.name "Sai Divakar"
           git config --global user.email "saidivakar.navara@gmail.com"
           git add helm/qr-code-generator-chart/values.yaml
-          git commit -m "Update Helm chart with new Docker tag: ${{ github.run_id }}"
+          git commit -m "Update Helm chart with new Docker tag: ${{ github.run_id }} [skip ci]"
           git push origin main
