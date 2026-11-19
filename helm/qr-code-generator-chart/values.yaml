@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: saidivakar/qr-code-generator
-  tag: v1
+  tag: 44517629305
   pullPolicy: IfNotPresent
 
 ingress:
