@@ -78,7 +78,6 @@ jobs:
             --max-line-length=127 \
             --statistics
 
-
   # Stage 3 & 4: DockerHub Login, Build and Push
   docker-build-and-push:
     name: Build and Push Docker Image
